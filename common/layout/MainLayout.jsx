@@ -27,7 +27,7 @@ const MainLayout = (props) => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Logo>
+			<Logo className="logo">
 				<Link href="/">LOGO</Link>
 
 				<InlineWrapper onClick={() => toggleTheme()}>
@@ -40,6 +40,26 @@ const MainLayout = (props) => {
 };
 
 export default MainLayout;
+
+const Logo = styled.div`
+	height: 80px;
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	padding-left: 16px;
+
+	background-color: #328ca61a;
+
+	font-size: 22px;
+	font-weight: bold;
+	color: #f1f1f1;
+`;
 
 const Container = styled.div`
 	width: 100vw;
@@ -78,6 +98,12 @@ const Container = styled.div`
 					opacity: 0.6;
 				}
 			}
+
+			& .logo {
+				& a {
+					color: #1e272e;
+				}
+			}
 		`}
 
 	${(props) =>
@@ -88,23 +114,4 @@ const Container = styled.div`
 
 			padding-top: 13%;
 		`}
-`;
-
-const Logo = styled.div`
-	height: 80px;
-	width: 100%;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-
-	display: flex;
-	align-items: center;
-	padding-left: 16px;
-
-	background-color: #2d3436;
-
-	font-size: 22px;
-	font-weight: bold;
 `;
